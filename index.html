@@ -15,14 +15,17 @@
     <body>
       <h1>Tic Tac Toe</h1>
        <div id="error"></div>
-      <form action="/" method="GET">
-        <div>
-          <label for="Email Address">Email Address</label>
-          <input type="Email" id="Email" name="Email Address" placeholder="Example@gmail.com" required>
-          <label for="Password">Password</label>
-          <input type="Password" id="Password" name="Password">
-          <button type="button">Create Account</button>
-        </div>
+       <section>
+   <form id="sign-up" class="border">
+     <fieldset>
+       <legend>Sign up!</legend>
+       <input type="text" name="credentials[email]" placeholder="Email">
+       <input type="password" name="credentials[password]" placeholder="Password">
+       <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+       <input type="submit" value="Sign up!">
+     </fieldset>
+   </form>
+ </section>
         <div class="board" id="board">
           <div class="cell" data-cell></div>
           <div class="cell" data-cell></div>
