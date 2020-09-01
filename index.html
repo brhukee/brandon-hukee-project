@@ -13,6 +13,9 @@
     </head>
     <body>
       <h1>Tic Tac Toe</h1>
+      <h2>
+        <input type='button' id='sign-out-button' value='Sign Out'>
+      </h2>
 
       <p id='sign-up-message'></p>
       <form id='sign-up-form'>
@@ -63,12 +66,8 @@
           </fieldset>
         </form>
 
-        <p id='sign-out-message'></p>
-        <input type='button' id='sign-out-button' value='Sign Out'>
-        <p id='begin-game-message'></p>
-        <button type='button' id='begin-game-button'>Start Game</button>
-
-
+        <!-- <p id='sign-out-message'></p>
+        <input type='button' id='sign-out-button' value='Sign Out'> -->
 <!-- code along here for board! -->
       <div class='container'>
         <div class='row board h-100'>
@@ -82,7 +81,9 @@
           <div class='col-4 box' id='box8'></div>
           <div class='col-4 box' id='box9'></div>
         </div>
+        <div class ="winning-message" id="winningMessage">
+          <div data-winning-message-text></div>
+          <button id="restartButton">Restart</button>
       </div>
-
-    </body>
+</body>
 </html>

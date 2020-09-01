@@ -5,21 +5,31 @@ body {
 }
 
 h1 {
-  color: #ffff00;
+  color: #66ffd9;
+}
+
+h2 {
+  text-align: right;
 }
 
 legend {
-  color: #ffff00;
+  color: #66ffd9;
 }
 
 .box {
-  border: solid 2px #ff0000;
+  border: solid 1px #66ffd9;
+  cursor: pointer;
   height: 100px;
   width: 100px;
 }
 
 .container {
-  border: solid 2px #000000;
-  height: 400px;
-  width: 400px;
+  border: solid 1px #808080;
+  height: 300px;
+  margin-top: 25px;
+  width: 300px;
+}
+
+#restartButton {
+  margin-top: 15px;
 }
