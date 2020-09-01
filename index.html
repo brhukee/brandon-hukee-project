@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
     <head>
       <title>Tic Tac Toe</title>
@@ -11,66 +10,79 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-      <script defer src="script.js"></script>
     </head>
     <body>
       <h1>Tic Tac Toe</h1>
 
-    <table>
-      <tr>
-        <td class="cell" id="0"></td>
-        <td class="cell" id="1"></td>
-        <td class="cell" id="2"></td>
-      </tr>
-      <tr>
-        <td class="cell" id="3"></td>
-        <td class="cell" id="4"></td>
-        <td class="cell" id="5"></td>
-      </tr>
-      <tr>
-        <td class="cell" id="6"></td>
-        <td class="cell" id="7"></td>
-        <td class="cell" id="8"></td>
-      </tr>
-    </table>
-    <div class="endgame">
-      <div class="text"></div>
-    </div>
-  <button onClick="startGame()">Restart</button>
-       <section>
-   <form id="sign-up" class="border">
-     <fieldset>
-       <legend>Sign up!</legend>
-       <input type="text" name="credentials[email]" placeholder="Email">
-       <input type="password" name="credentials[password]" placeholder="Password">
-       <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-       <input type="submit" value="Sign up!">
-     </fieldset>
-   </form>
- </section>
- <section>
-    <form id="sign-in" class="border">
-      <fieldset>
-        <legend>Sign in</legend>
-        <input type="text" name="credentials[email]" placeholder="Email">
-        <input type="password" name="credentials[password]" placeholder="Password">
-        <input type="submit" value="Sign in">
-      </fieldset>
-    </form>
-  </section>
-        <div class="board" id="board">
-          <div data-cell-index='0' class='col-4 box'></div>
-          <div data-cell-index='1' class='col-4 box'></div>
-          <div data-cell-index='2' class='col-4 box'></div>
-          <div data-cell-index='3' class='col-4 box'></div>
-          <div data-cell-index='4' class='col-4 box'></div>
-          <div data-cell-index='5' class='col-4 box'></div>
-          <div data-cell-index='6' class='col-4 box'></div>
-          <div data-cell-index='7' class='col-4 box'></div>
-          <div data-cell-index='8' class='col-4 box'></div>
+      <p id='sign-up-message'></p>
+      <form id='sign-up-form'>
+        <fieldset>
+          <legend>Sign Up</legend>
+
+            <label for='sign-up-email'>Email</label>
+            <input id='sign-up-email' type='text' placeholder='Email' name='credentials[email]'>
+
+            <label for='sign-up-password'>Password</label>
+            <input id='sign-up-password' type='password' placeholder='Password' name='credentials[password]'>
+
+            <label for='sign-up-password_confirmation'>Confirm Password</label>
+            <input id='sign-up-password_confirmation' type='password' placeholder='Password' name='credentials[password_confirmation]'>
+
+            <input type='submit' value='Sign Up'>
+        </fieldset>
+      </form>
+
+      <p id='sign-in-message'></p>
+      <form id='sign-in-form'>
+        <fieldset>
+          <legend>Sign In</legend>
+
+            <label for='sign-in-email'>Email</label>
+            <input id='sign-in-email' type='text' placeholder='Email' name='credentials[email]'>
+
+            <label for='sign-in-password'>Password</label>
+            <input id='sign-in-password' type='password' placeholder='Password' name='credentials[password]'>
+
+
+            <input type='submit' value='Sign In'>
+          </fieldset>
+        </form>
+
+        <p id='change-password-message'></p>
+        <form id='change-password-form'>
+          <fieldset>
+            <legend>Change Password</legend>
+
+              <label for='change-password-password'>Old Password</label>
+              <input id='change-password-password' type='password' placeholder='Old Password' name='passwords[old]'>
+
+              <label for='change-password-password_confirmation'>New Password</label>
+              <input id='change-password-password_confirmation' type='password' placeholder='New Password' name='passwords[new]'>
+
+              <input type='submit' value='Change Password'>
+          </fieldset>
+        </form>
+
+        <p id='sign-out-message'></p>
+        <input type='button' id='sign-out-button' value='Sign Out'>
+        <p id='begin-game-message'></p>
+        <button type='button' id='begin-game-button'>Start Game</button>
+
+
+<!-- code along here for board! -->
+      <div class='container'>
+        <div class='row board h-100'>
+          <div class='col-4 box' id='box1'></div>
+          <div class='col-4 box' id='box2'></div>
+          <div class='col-4 box' id='box3'></div>
+          <div class='col-4 box' id='box4'></div>
+          <div class='col-4 box' id='box5'></div>
+          <div class='col-4 box' id='box6'></div>
+          <div class='col-4 box' id='box7'></div>
+          <div class='col-4 box' id='box8'></div>
+          <div class='col-4 box' id='box9'></div>
         </div>
-        <div class="winning-message"></div>
-          <div data-winning-message-text></div>
-          <button id="restartButton">Restart</button>
+      </div>
+
     </body>
 </html>
