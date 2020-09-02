@@ -1,15 +1,31 @@
-// const name = document.getElementById('name')
-// const password = document.getElementById('password')
-// const form = document.getElementById('form')
-// const errorElement = document.getElementById('error')
+var origBoard;
+const playerOne = 'O';
+const playerTwo = 'X';
+
+const winCombos = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [6, 4, 2]
+]
+
+// const cells = document.querySelectorAll('.cell');
+// startGame();
 //
-// form.addEventListener('Create Account', (e) => {
-//   let messages = []
-//   if (name.value === '' || name.value == null) {
-//     messages.push('Email is required')
+// function startGame() {
+//   document.querySelector(".endgame").style.display = "none"
+//   origBoard = Array.from(Array(9).keys())
+//   for (var i = 0; i < cells.length; i++) {
+//     cells[i].innerText = '';
+//     cells[i].style.removeProperty('background-color');
+//     cells[i].addEventListener('click', turnClick, false);
 //   }
-//   if (messages.length > 0) {
-//     e.preventDefault()
-//     errorElement.innerText = messages.join(', ')
-//   }
-// })
+// }
+//
+// function turnClick(square) {
+//   console.log(square.target.id)
+// }

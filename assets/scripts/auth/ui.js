@@ -47,12 +47,12 @@ const onSignOutFailure = function () {
   console.log('error is', error)
 }
 
-const onBeginGameSuccess = function () {
+const onStartGameSuccess = function () {
   $('#begin-game-message').text('Game has begun!')
   console.log('Success!')
 }
 
-const onBeginGameFailure = function () {
+const onStartGameFailure = function () {
   $('#begin-game-message').text('Error, game has not begun.  Try again.')
   console.log('error is', error)
 }
@@ -66,6 +66,6 @@ module.exports = {
   onChangePasswordFailure: onChangePasswordFailure,
   onSignOutSuccess: onSignOutSuccess,
   onSignOutFailure: onSignOutFailure,
-  onBeginGameSuccess: onBeginGameSuccess,
-  onBeginGameFailure: onBeginGameFailure
+  onStartGameSuccess: onStartGameSuccess,
+  onStartGameFailure: onStartGameFailure
 }

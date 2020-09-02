@@ -48,8 +48,8 @@ const signOut = function () {
   })
 }
 
-const beginGame = function () {
-  console.log('beginGame hitting!')
+const startGame = function () {
+  console.log('startGame hitting!')
 
   return $.ajax({
     url: config.apiUrl + '/games',
@@ -66,5 +66,5 @@ module.exports = {
   SignIn: SignIn,
   changePassword: changePassword,
   signOut: signOut,
-  beginGame: beginGame
+  startGame: startGame
 }

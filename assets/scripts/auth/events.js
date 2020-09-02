@@ -46,7 +46,7 @@ const onChangePassword = function (event) {
 }
 
 const onSignOut = function (event) {
-  event.preventDefault() // extraneous
+  event.preventDefault()
 
   console.log('onSignOutfired!')
 
@@ -55,13 +55,14 @@ const onSignOut = function (event) {
     .catch(ui.onSignOutFailure)
 }
 
-const onBeginGame = function () {
-  event.preventDefault() // extraneous
-  console.log('onBeginGame is hitting!')
+const onStartGame = function (event) {
+  console.log('is my event running')
+  event.preventDefault()
+  console.log('onStartGame is hitting!')
 
-  api.beginGame()
-    .then(ui.onBeginGameSuccess)
-    .catch(ui.onBeginGameFailure)
+  api.startGame()
+    .then(ui.onStartGameSuccess)
+    .catch(ui.onStartGameFailure)
 }
 
 const onBoxClick = function (event) {
@@ -76,6 +77,6 @@ module.exports = {
   onSignIn: onSignIn,
   onChangePassword: onChangePassword,
   onSignOut: onSignOut,
-  onBeginGame: onBeginGame,
+  onStartGame: onStartGame,
   onBoxClick: onBoxClick
 }
