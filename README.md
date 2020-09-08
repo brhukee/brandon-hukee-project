@@ -5,3 +5,10 @@ https://git.generalassemb.ly/ga-wdi-boston/game-project-api
 
 Initial wireframe:
 https://miro.com/app/board/o9J_kmsz_Mg=/
+
+Technologies used
+Javascript
+HTML
+CSS/SCSS
+Bootstrap
+JQuery
