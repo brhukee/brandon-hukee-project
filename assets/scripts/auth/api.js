@@ -1,9 +1,9 @@
 'use strict'
 
 const config = require('./../config')
-const store = require('../store')
+const store = require('./../store')
 
-const SignUp = function (data) {
+const signUp = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
     method: 'POST',
@@ -11,10 +11,7 @@ const SignUp = function (data) {
   })
 }
 
-const SignIn = function (data) {
-
-  console.log('SignIn data is', data)
-
+const signIn = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-in',
     method: 'POST',
@@ -23,48 +20,25 @@ const SignIn = function (data) {
 }
 
 const changePassword = function (data) {
-
-  console.log('changePassword data is', data)
-
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
+    headers: { Authorization: 'Bearer ' + store.user.token },
     data: data
   })
 }
 
 const signOut = function () {
-  console.log('signOut function hitting')
-
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
-  })
-}
-
-const startGame = function () {
-  console.log('startGame hitting!')
-
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'POST',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    data: '{}'
+    headers: { Authorization: 'Bearer ' + store.user.token }
   })
 }
 
 module.exports = {
-  SignUp: SignUp,
-  SignIn: SignIn,
+  SignUp: signUp,
+  SignIn: signIn,
   changePassword: changePassword,
-  signOut: signOut,
-  startGame: startGame
+  signOut: signOut
 }

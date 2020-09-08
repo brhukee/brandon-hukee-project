@@ -1,60 +1,80 @@
 'use strict'
 
-const store = require('../store')
+const store = require('./../store')
 
-const onSignUpSuccess = function (response) {
-  $('#sign-up-message').text('Thanks for signing up ' + response.user.email)
-  console.log('Success!')
-  $('#sign-up-form').trigger('reset')
+// Button functionality w/ JQuery hide/show effects
+const onSignUpButton = function () {
+  $('#sign-up-form').show()
+  $('#sign-in-form').hide()
 }
 
-const onSignUpFailure = function (error) {
-  console.log('error is', error)
-  $('#sign-up-message').text('Sign up failed, try again.')
+const onSignInButton = function () {
+  $('#sign-in-form').show()
+  $('#sign-up-form').hide()
+}
+
+const changePassword = function () {
+  $('#change-password-form').show()
+}
+
+const onSignUpSuccess = function (response) {
+  $('#message').text('Thanks for signing up ' + response.user.email)
   $('#sign-up-form').trigger('reset')
+  $('#sign-up-form').hide()
+}
+
+const onSignUpFailure = function () {
+  $('#message').text('Sign up failed, please try again')
 }
 
 const onSignInSuccess = function (response) {
-  console.log('Success!')
   store.user = response.user
-  $('#sign-in-message').text('Thanks for signing in, ' + response.user.email)
+
+  $('#user-name').text('Welcome ' + response.user.email)
   $('#sign-in-form').trigger('reset')
+  $('#sign-in-form').hide()
+  $('#sign-out').show()
+  $('#change').show()
+  $('#sign-in-button').hide()
+  $('#sign-up-button').hide()
+  $('.buttons').show()
+  $('#message').hide()
+  $('#game-message').html('')
 }
 
 const onSignInFailure = function (error) {
-  console.log('error is ', error)
-  $('#sign-in-message').text('Sorry, sign in failed. Try again.')
-  $('#sign-in-form').trigger('reset')
+  $('#message').show()
+  $('#message').text('Failed to sign in, try again')
 }
 
-const onChangePasswordSuccess = function () {
-  $('#change-password-message').text('Password changed successfully!')
-  console.log('Success!')
+const onChangePasswordSuccess = function (response) {
+  $('#message').show()
+  $('#message').text('Password reset successful')
+  $('#pass-change-form').trigger('reset')
+  $('#pass-change-form').hide()
 }
 
 const onChangePasswordFailure = function () {
-  $('#change-password-message').text('Error, could not change password.')
-  console.log('error is', error)
+  $('#message').show()
+  $('#message').text('Password reset unsuccessful, try again')
 }
 
-const onSignOutSuccess = function () {
-  $('#sign-out-message').text('Thanks, signed out successfully.')
-  console.log('Success!')
+const onSignOutSuccess = function (response) {
+  $('#message').text('Sign out successful')
+  $('#change').hide()
+  $('#sign-out').hide()
+  $('#sign-up-button').show()
+  $('#sign-in-button').show()
+  $('#user-name').html('')
+  $('.buttons').hide()
+  $('#game-message').html('Sign in')
+  $('.container').hide()
+  $('#pass-change-form').hide()
 }
 
 const onSignOutFailure = function () {
-  $('#sign-out-message').text('Error, could not sign you out. Try again.')
-  console.log('error is', error)
-}
-
-const onStartGameSuccess = function () {
-  $('#begin-game-message').text('Game has begun!')
-  console.log('Success!')
-}
-
-const onStartGameFailure = function () {
-  $('#begin-game-message').text('Error, game has not begun.  Try again.')
-  console.log('error is', error)
+  $('#message').show()
+  $('#message').text('Failed to sign out, try again')
 }
 
 module.exports = {
@@ -65,7 +85,5 @@ module.exports = {
   onChangePasswordSuccess: onChangePasswordSuccess,
   onChangePasswordFailure: onChangePasswordFailure,
   onSignOutSuccess: onSignOutSuccess,
-  onSignOutFailure: onSignOutFailure,
-  onStartGameSuccess: onStartGameSuccess,
-  onStartGameFailure: onStartGameFailure
+  onSignOutFailure: onSignOutFailure
 }
