@@ -1,10 +1,10 @@
 const ui = require('./ui')
 const api = require('./api')
-// Player/game variables + game info w/ win conditions
+// Player/game info
 let player = 'X'
 let game = ['', '', '', '', '', '', '', '', '']
 let over = false
-
+// Win conditions
 const gameWinningCombos = [
   [0, 1, 2],
   [3, 4, 5],
@@ -41,11 +41,11 @@ const onBoxClick = function (event) {
     }
 
     api.updateGame(data)
-    // Is player X/O
+
     player = player === 'X' ? 'O' : 'X'
   }
 }
-
+// Game result functions
 const gameWin = function () {
   for (let i = 0; i < gameWinningCombos.length; i++) {
     const newArr = []
@@ -68,7 +68,7 @@ const gameDraw = function () {
     over = true
   }
 }
-// Game info functions
+// New game and games played
 const newGame = function () {
   game = ['', '', '', '', '', '', '', '', '']
   over = false

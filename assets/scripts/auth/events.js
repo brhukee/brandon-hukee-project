@@ -1,5 +1,4 @@
 'use strict'
-
 const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
@@ -22,13 +21,13 @@ const onSignIn = function (event) {
     .catch(ui.onSignInFailure)
 }
 
-const onChangePassword = function (event) {
+const onPassChange = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  api.changePassword(data)
-    .then(ui.onChangePasswordSuccess)
-    .catch(ui.onChangePasswordFailure)
+  api.passChange(data)
+    .then(ui.onPassChangeSuccess)
+    .catch(ui.onPassChangeFailure)
 }
 
 const onSignOut = function (event) {
@@ -41,6 +40,6 @@ const onSignOut = function (event) {
 module.exports = {
   onSignUp: onSignUp,
   onSignIn: onSignIn,
-  onChangePassword: onChangePassword,
+  onPassChange: onPassChange,
   onSignOut: onSignOut
 }

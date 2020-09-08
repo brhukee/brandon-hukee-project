@@ -2,19 +2,18 @@
 
 const store = require('./../store')
 
-// Button functionality w/ JQuery hide/show effects
-const onSignUpButton = function () {
-  $('#sign-up-form').show()
-  $('#sign-in-form').hide()
-}
-
 const onSignInButton = function () {
   $('#sign-in-form').show()
   $('#sign-up-form').hide()
 }
 
-const changePassword = function () {
-  $('#change-password-form').show()
+const onSignUpButton = function () {
+  $('#sign-up-form').show()
+  $('#sign-in-form').hide()
+}
+
+const changePassForm = function () {
+  $('#pass-change-form').show()
 }
 
 const onSignUpSuccess = function (response) {
@@ -24,7 +23,7 @@ const onSignUpSuccess = function (response) {
 }
 
 const onSignUpFailure = function () {
-  $('#message').text('Sign up failed, please try again')
+  $('#message').text('Sign up Failed, Try again')
 }
 
 const onSignInSuccess = function (response) {
@@ -42,39 +41,39 @@ const onSignInSuccess = function (response) {
   $('#game-message').html('')
 }
 
-const onSignInFailure = function (error) {
+const onSignInFailure = function () {
   $('#message').show()
-  $('#message').text('Failed to sign in, try again')
+  $('#message').text('Sign in Failed, Try again')
 }
 
-const onChangePasswordSuccess = function (response) {
+const onPassChangeSuccess = function (response) {
   $('#message').show()
-  $('#message').text('Password reset successful')
+  $('#message').text('Successful Password Reset')
   $('#pass-change-form').trigger('reset')
   $('#pass-change-form').hide()
 }
 
-const onChangePasswordFailure = function () {
+const onPassChangeFailure = function () {
   $('#message').show()
-  $('#message').text('Password reset unsuccessful, try again')
+  $('#message').text('Password Reset Failed, Try again')
 }
 
 const onSignOutSuccess = function (response) {
-  $('#message').text('Sign out successful')
+  $('#message').text('Successfully Signed Out')
   $('#change').hide()
   $('#sign-out').hide()
   $('#sign-up-button').show()
   $('#sign-in-button').show()
   $('#user-name').html('')
   $('.buttons').hide()
-  $('#game-message').html('Sign in')
+  $('#game-message').html('Please Sign In')
   $('.container').hide()
   $('#pass-change-form').hide()
 }
 
 const onSignOutFailure = function () {
   $('#message').show()
-  $('#message').text('Failed to sign out, try again')
+  $('#message').text('Sign Out Failed, Try again')
 }
 
 module.exports = {
@@ -82,8 +81,11 @@ module.exports = {
   onSignUpFailure: onSignUpFailure,
   onSignInSuccess: onSignInSuccess,
   onSignInFailure: onSignInFailure,
-  onChangePasswordSuccess: onChangePasswordSuccess,
-  onChangePasswordFailure: onChangePasswordFailure,
+  onPassChangeSuccess: onPassChangeSuccess,
+  onPassChangeFailure: onPassChangeFailure,
   onSignOutSuccess: onSignOutSuccess,
-  onSignOutFailure: onSignOutFailure
+  onSignOutFailure: onSignOutFailure,
+  onSignInButton: onSignInButton,
+  onSignUpButton: onSignUpButton,
+  changePassForm: changePassForm
 }

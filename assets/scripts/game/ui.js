@@ -1,11 +1,11 @@
 const store = require('./../store')
 
 const drawMessage = function () {
-  $('#game-message').text('Draw')
+  $('#game-message').text('It is a draw')
 }
 
 const winMessage = function (player) {
-  $('#game-message').text(`Winner is${player}`)
+  $('#game-message').text(`The winner is ${player}`)
 }
 
 const newGameMessage = function (response) {
@@ -15,7 +15,7 @@ const newGameMessage = function (response) {
   $('.container').show()
 }
 const getGamesMessage = function (response) {
-  $('#game-message').html('Total games played: ' + response.games.length)
+  $('#game-message').html('You have played ' + response.games.length + ' game(s)')
 }
 
 module.exports = {
