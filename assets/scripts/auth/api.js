@@ -37,8 +37,8 @@ const signOut = function () {
 }
 
 module.exports = {
-  SignUp: signUp,
-  SignIn: signIn,
+  signUp: signUp,
+  signIn: signIn,
   changePassword: changePassword,
   signOut: signOut
 }
