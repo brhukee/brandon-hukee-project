@@ -23,7 +23,7 @@ const onSignUpSuccess = function (response) {
 }
 
 const onSignUpFailure = function () {
-  $('#message').text('Sign up Failed, Try again')
+  $('#message').text('Sign up failed, please try again')
 }
 
 const onSignInSuccess = function (response) {
@@ -43,23 +43,23 @@ const onSignInSuccess = function (response) {
 
 const onSignInFailure = function () {
   $('#message').show()
-  $('#message').text('Sign in Failed, Try again')
+  $('#message').text('Sign in failed')
 }
 
 const onPassChangeSuccess = function (response) {
   $('#message').show()
-  $('#message').text('Successful Password Reset')
+  $('#message').text('Password reset successful')
   $('#pass-change-form').trigger('reset')
   $('#pass-change-form').hide()
 }
 
 const onPassChangeFailure = function () {
   $('#message').show()
-  $('#message').text('Password Reset Failed, Try again')
+  $('#message').text('Password reset unsuccessful')
 }
 
 const onSignOutSuccess = function (response) {
-  $('#message').text('Successfully Signed Out')
+  $('#message').text('Sign out successful')
   $('#change').hide()
   $('#sign-out').hide()
   $('#sign-up-button').show()
@@ -73,7 +73,7 @@ const onSignOutSuccess = function (response) {
 
 const onSignOutFailure = function () {
   $('#message').show()
-  $('#message').text('Sign Out Failed, Try again')
+  $('#message').text('Sign out failed')
 }
 
 module.exports = {
